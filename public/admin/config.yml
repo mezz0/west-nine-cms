@@ -1,10 +1,13 @@
 backend:
-  name: test-repo
+  name: west-nine-cms
+  repo: https://github.com/mezz0/west-nine-cms
+  branch: main
 
 site_url: https://west-nine-cms.netlify.app/
 
 publish_mode: editorial_workflow
 media_folder: src/assets/uploads
+public_folder: public
 
 collections: # A list of collections the CMS should be able to edit
   - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
