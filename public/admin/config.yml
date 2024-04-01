@@ -1,6 +1,5 @@
 backend:
   name: github
-  repo: https://github.com/mezz0/west-nine-cms
   branch: main
 
 site_url: https://west-nine-cms.netlify.app/
