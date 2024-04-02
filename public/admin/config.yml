@@ -7,7 +7,7 @@ backend:
 site_url: https://west-nine-cms.netlify.app/
 
 publish_mode: editorial_workflow
-media_folder: "src/assets/uploads"
+media_folder: "src/assets/uploads/_media"
 
 collections: # A list of collections the CMS should be able to edit
   # - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
