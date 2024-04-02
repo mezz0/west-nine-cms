@@ -283,14 +283,14 @@ collections: # A list of collections the CMS should be able to edit
         widget: string
     meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
   
-  - name: 'projects'
-    label: Projects
-    label_singular: project
-    folder: assets/uploads/projects
-    create: true
-    description: >
-      You will be able to add a project with its description and images.
-    fields:
+ - name: 'projects'
+  label: Projects
+  label_singular: project
+  folder: assets/uploads/projects
+  create: true
+  description: >
+    You will be able to add a project with its description and images.
+  fields:
     - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
     - { label: 'Draft', name: 'draft', widget: 'boolean', default: false }
     - {
@@ -316,16 +316,16 @@ collections: # A list of collections the CMS should be able to edit
       fields:
         - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
         - { label: 'Description', name: 'description', widget: 'markdown' }
-     view_filters:
-      - label: Posts With Index
-        field: title
-        pattern: 'This is post #'
-      - label: Drafts
-        field: draft
-        pattern: true
-    view_groups:
-      - label: Year
-        field: date
-        pattern: \d{4}
-      - label: Drafts
-        field: draft
+  view_filters:
+    - label: Posts With Index
+      field: title
+      pattern: 'This is post #'
+    - label: Drafts
+      field: draft
+      pattern: true
+  view_groups:
+    - label: Year
+      field: date
+      pattern: \d{4}
+    - label: Drafts
+      field: draft
