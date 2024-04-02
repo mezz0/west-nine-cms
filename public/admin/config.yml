@@ -282,3 +282,50 @@ collections: # A list of collections the CMS should be able to edit
         name: title
         widget: string
     meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+  
+  - name: projects
+    label: Projects
+    label_singular: project
+    folder: assets/uploads/projects
+    create: true
+    description: >
+      You will be able to add a project with its description and images.
+    fields:
+    - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+    - { label: 'Draft', name: 'draft', widget: 'boolean', default: false }
+    - {
+        label: 'Publish Date',
+        name: 'date',
+        widget: 'datetime',
+        date_format: 'YYYY-MM-DD',
+        time_format: 'HH:mm',
+        format: 'YYYY-MM-DD HH:mm',
+      }
+    - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+    - { name: 'gallery', widget: 'image', choose_url: true, media_library: {config: {multiple: true, max_files: 999}}}
+    - { name: 'post', widget: relation, collection: posts, multiple: true, search_fields: [ "title" ], display_fields: [ "title" ], value_field: "{{slug}}", filters: [ {field: "draft", values: [false]} ] }
+    - label: 'Cover Image'
+      name: 'image'
+      widget: 'image'
+      required: false
+      tagname: ''
+    - name: authors
+      label: Authors
+      label_singular: 'Author'
+      widget: list
+      fields:
+        - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+        - { label: 'Description', name: 'description', widget: 'markdown' }
+     view_filters:
+      - label: Posts With Index
+        field: title
+        pattern: 'This is post #'
+      - label: Drafts
+        field: draft
+        pattern: true
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+      - label: Drafts
+        field: draft
