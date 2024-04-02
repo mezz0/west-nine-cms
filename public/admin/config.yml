@@ -283,7 +283,7 @@ collections: # A list of collections the CMS should be able to edit
         widget: string
     meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
   
-  - name: projects
+  - name: 'projects'
     label: Projects
     label_singular: project
     folder: assets/uploads/projects
