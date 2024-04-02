@@ -382,7 +382,7 @@ collections: # A list of collections the CMS should be able to edit
   - name: "projects"
     label: Projects
     label_singular: project
-    folder: assets/uploads/projects
+    folder: 'src/assets/uploads/_projects'
     create: true
     description: >
       You will be able to add a project with its description and images.
